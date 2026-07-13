@@ -1,47 +1,13 @@
-body{
-margin:0;
-padding:0;
-font-family:Arial,sans-serif;
-background:linear-gradient(135deg,#ff9ecf,#ffe4ec);
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-overflow:hidden;
-}
-
-.container,
 .proposal{
-background:white;
-padding:30px;
-border-radius:20px;
-width:90%;
-max-width:380px;
-box-shadow:0 10px 30px rgba(0,0,0,.2);
+    position: relative;
 }
 
-.message{
-line-height:1.8;
-font-size:18px;
-margin:25px 0;
+#noBtn{
+    transition: all 0.2s ease;
 }
 
 button{
-padding:15px 25px;
-border:none;
-border-radius:30px;
-background:#ff4d88;
-color:white;
-font-size:18px;
-cursor:pointer;
-margin:10px;
-}
-
-button:hover{
-transform:scale(1.05);
-}
-
-.hidden{
-display:none;
+    display:block;
+    width:100%;
+    margin:15px auto;
 }
