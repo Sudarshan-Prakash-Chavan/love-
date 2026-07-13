@@ -1,46 +1,52 @@
-const nextBtn=document.getElementById("nextBtn");
-const proposal=document.getElementById("proposal");
-const container=document.querySelector(".container");
-const noBtn=document.getElementById("noBtn");
+const nextBtn = document.getElementById("nextBtn");
+const proposal = document.getElementById("proposal");
+const container = document.querySelector(".container");
+const noBtn = document.getElementById("noBtn");
 
-nextBtn.onclick=function(){
+nextBtn.onclick = () => {
+    container.style.display = "none";
+    proposal.classList.remove("hidden");
+};
 
-container.style.display="none";
-proposal.classList.remove("hidden");
-
+function captureSelfie() {
+    document.getElementById("cameraInput").click();
 }
 
-function yesClicked(){
+document.getElementById("cameraInput").addEventListener("change", function () {
 
-proposal.innerHTML=`
-<h1>❤️</h1>
+    if(this.files.length > 0){
 
-<h2>Thank You ❤️</h2>
+        proposal.innerHTML = `
+        <h1>❤️</h1>
 
-<p>
-You just made me the happiest person.
+        <h2>Yay!! ❤️</h2>
 
-I promise to love,
-respect,
-care for,
-and stand beside you forever.
+        <p>
+        Thank you for saying YES!
 
-I can't wait to build a beautiful future with you.
+        Your beautiful selfie has been selected.
 
-❤️
-</p>
+        I promise to love, respect and cherish you forever.
 
-`;
+        ❤️
+        </p>
+        `;
 
-}
-
-noBtn.addEventListener("mouseover",function(){
-
-let x=Math.random()*250;
-let y=Math.random()*300;
-
-noBtn.style.position="absolute";
-noBtn.style.left=x+"px";
-noBtn.style.top=y+"px";
+        alert("Selfie selected successfully ❤️");
+    }
 
 });
+
+noBtn.addEventListener("mouseenter", moveButton);
+noBtn.addEventListener("click", moveButton);
+
+function moveButton(){
+
+    const maxX = window.innerWidth - 120;
+    const maxY = window.innerHeight - 60;
+
+    noBtn.style.position = "fixed";
+    noBtn.style.left = Math.random() * maxX + "px";
+    noBtn.style.top = Math.random() * maxY + "px";
+
+}
